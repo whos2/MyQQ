@@ -13,6 +13,8 @@ namespace MyQQ
 {
     class PublicClass
     {
+        public static int loginID;
+
         #region  鼠标移动窗体位置
         public const int WM_SYSCOMMAND = 0x0112;//该变量表示将向Windows发送的消息类型
         public const int SC_MOVE = 0xF010;//该变量表示发送消息的附加消息
@@ -121,7 +123,8 @@ namespace MyQQ
             //btn.Visible = false;
         }
         #endregion
-        
+
+        #region 删除文本按钮被点击
         public static void btnDelPressed(TextBox tb,Guna2Button btn,string text)
         {
             tb.Focus();
@@ -129,5 +132,9 @@ namespace MyQQ
             int index = tb.Text.Length / 2;
             tb.SelectionStart = index;
         }
+        #endregion
+
+
+        
     }
 }

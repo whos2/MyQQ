@@ -10,6 +10,10 @@ C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.csproj.CopyComplete
 C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.exe
 C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.pdb
 C:\Users\sc\source\repos\MyQQ\MyQQ\bin\Debug\Guna.UI2.dll
-C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.UC_Controls.UC_Login.resources
-C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.UC_Controls.UC_Regist.resources
 C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.Frm_Regist.resources
+C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.Frm_Main.resources
+C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.Frm_PersonalInfo.resources
+C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.Frm_EditPersonalInfo.resources
+C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.Frm_Head.resources
+C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.UC_Controls.UC_FriendItem.resources
+C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.UC_Controls.UC_SearchItem.resources

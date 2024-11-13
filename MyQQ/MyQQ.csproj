@@ -53,11 +53,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB_Helper.cs" />
+    <Compile Include="Frm_EditPersonalInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_EditPersonalInfo.Designer.cs">
+      <DependentUpon>Frm_EditPersonalInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Head.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Head.Designer.cs">
+      <DependentUpon>Frm_Head.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Login.Designer.cs">
       <DependentUpon>Frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Main.Designer.cs">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_PersonalInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_PersonalInfo.Designer.cs">
+      <DependentUpon>Frm_PersonalInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Regist.cs">
       <SubType>Form</SubType>
@@ -68,20 +92,38 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicClass.cs" />
-    <Compile Include="UC_Controls\UC_Login.cs">
+    <Compile Include="UC_Controls\UC_FriendItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_Controls\UC_Login.Designer.cs">
-      <DependentUpon>UC_Login.cs</DependentUpon>
+    <Compile Include="UC_Controls\UC_FriendItem.Designer.cs">
+      <DependentUpon>UC_FriendItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_Controls\UC_Regist.cs">
+    <Compile Include="UC_Controls\UC_MessageItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_Controls\UC_Regist.Designer.cs">
-      <DependentUpon>UC_Regist.cs</DependentUpon>
+    <Compile Include="UC_Controls\UC_MessageItem.Designer.cs">
+      <DependentUpon>UC_MessageItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Controls\UC_SearchItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Controls\UC_SearchItem.Designer.cs">
+      <DependentUpon>UC_SearchItem.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Frm_EditPersonalInfo.resx">
+      <DependentUpon>Frm_EditPersonalInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Head.resx">
+      <DependentUpon>Frm_Head.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Main.resx">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_PersonalInfo.resx">
+      <DependentUpon>Frm_PersonalInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Regist.resx">
       <DependentUpon>Frm_Regist.cs</DependentUpon>
@@ -95,11 +137,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UC_Controls\UC_Login.resx">
-      <DependentUpon>UC_Login.cs</DependentUpon>
+    <EmbeddedResource Include="UC_Controls\UC_FriendItem.resx">
+      <DependentUpon>UC_FriendItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_Controls\UC_Regist.resx">
-      <DependentUpon>UC_Regist.cs</DependentUpon>
+    <EmbeddedResource Include="UC_Controls\UC_SearchItem.resx">
+      <DependentUpon>UC_SearchItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

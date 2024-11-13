@@ -11,7 +11,7 @@ namespace MyQQ
     class DB_Helper
     {
         static string conStr = @"Data Source=.;Initial Catalog=MyQQ;Integrated Security=True";
-        SqlConnection connection = new SqlConnection(conStr);
+        public static SqlConnection connection = new SqlConnection(conStr);
 
         /// <summary>
         /// 执行sql语句，并返回查询到的结果的条数
@@ -52,10 +52,10 @@ namespace MyQQ
         public SqlDataReader GetSQLReader(string command)
         {
             SqlCommand com = new SqlCommand(command, connection); //创建sql命令对象
-            if (connection.State == ConnectionState.Closed) //判断数据库连接是否关闭
-                connection.Open();  //打开数据库连接
+            if (connection.State == ConnectionState.Open) //判断数据库连接是否关闭
+                connection.Close();  //打开数据库连接
+            connection.Open();
             SqlDataReader dr = com.ExecuteReader();  //执行查询操作
-            connection.Close();  //关闭数据库连接
             return dr;  //返回查询结果
         }
     }

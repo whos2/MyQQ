@@ -34,15 +34,15 @@
             this.guna2BtnMin = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBoxHead = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.guna2QQIDBtnDel = new Guna.UI2.WinForms.Guna2Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.guna2QQPasswordBtnDel = new Guna.UI2.WinForms.Guna2Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.cbRememberPwd = new System.Windows.Forms.CheckBox();
+            this.cbAutoLogin = new System.Windows.Forms.CheckBox();
             this.guna2BtnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.guna2BtnRegist = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2QQIDBtnDel = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2QQPasswordBtnDel = new Guna.UI2.WinForms.Guna2Button();
             this.panelTopFrmLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBoxHead)).BeginInit();
             this.panel2.SuspendLayout();
@@ -120,6 +120,24 @@
             this.panel2.Size = new System.Drawing.Size(251, 56);
             this.panel2.TabIndex = 2;
             // 
+            // guna2QQIDBtnDel
+            // 
+            this.guna2QQIDBtnDel.BackColor = System.Drawing.Color.Transparent;
+            this.guna2QQIDBtnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2QQIDBtnDel.BackgroundImage")));
+            this.guna2QQIDBtnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2QQIDBtnDel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2QQIDBtnDel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2QQIDBtnDel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2QQIDBtnDel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2QQIDBtnDel.FillColor = System.Drawing.Color.Empty;
+            this.guna2QQIDBtnDel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2QQIDBtnDel.ForeColor = System.Drawing.Color.White;
+            this.guna2QQIDBtnDel.Location = new System.Drawing.Point(225, 20);
+            this.guna2QQIDBtnDel.Name = "guna2QQIDBtnDel";
+            this.guna2QQIDBtnDel.Size = new System.Drawing.Size(15, 15);
+            this.guna2QQIDBtnDel.TabIndex = 1;
+            this.guna2QQIDBtnDel.Click += new System.EventHandler(this.guna2QQIDBtnDel_Click);
+            // 
             // txtID
             // 
             this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -132,6 +150,8 @@
             this.txtID.Text = "输入QQ号";
             this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtID.Click += new System.EventHandler(this.txtID_Click);
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             this.txtID.Leave += new System.EventHandler(this.txtID_Leave);
             // 
             // panel3
@@ -145,6 +165,24 @@
             this.panel3.Size = new System.Drawing.Size(251, 56);
             this.panel3.TabIndex = 3;
             // 
+            // guna2QQPasswordBtnDel
+            // 
+            this.guna2QQPasswordBtnDel.BackColor = System.Drawing.Color.Transparent;
+            this.guna2QQPasswordBtnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2QQPasswordBtnDel.BackgroundImage")));
+            this.guna2QQPasswordBtnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2QQPasswordBtnDel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2QQPasswordBtnDel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2QQPasswordBtnDel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2QQPasswordBtnDel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2QQPasswordBtnDel.FillColor = System.Drawing.Color.Empty;
+            this.guna2QQPasswordBtnDel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2QQPasswordBtnDel.ForeColor = System.Drawing.Color.White;
+            this.guna2QQPasswordBtnDel.Location = new System.Drawing.Point(225, 22);
+            this.guna2QQPasswordBtnDel.Name = "guna2QQPasswordBtnDel";
+            this.guna2QQPasswordBtnDel.Size = new System.Drawing.Size(15, 15);
+            this.guna2QQPasswordBtnDel.TabIndex = 1;
+            this.guna2QQPasswordBtnDel.Click += new System.EventHandler(this.guna2QQPasswordBtnDel_Click);
+            // 
             // txtPassword
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -157,29 +195,31 @@
             this.txtPassword.Text = "输入QQ密码";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
-            // checkBox1
+            // cbRememberPwd
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.checkBox1.Location = new System.Drawing.Point(74, 415);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(91, 24);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "记住密码";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbRememberPwd.AutoSize = true;
+            this.cbRememberPwd.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbRememberPwd.Location = new System.Drawing.Point(74, 415);
+            this.cbRememberPwd.Name = "cbRememberPwd";
+            this.cbRememberPwd.Size = new System.Drawing.Size(91, 24);
+            this.cbRememberPwd.TabIndex = 4;
+            this.cbRememberPwd.Text = "记住密码";
+            this.cbRememberPwd.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // cbAutoLogin
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.checkBox2.Location = new System.Drawing.Point(234, 415);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(91, 24);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "自动登录";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbAutoLogin.AutoSize = true;
+            this.cbAutoLogin.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbAutoLogin.Location = new System.Drawing.Point(234, 415);
+            this.cbAutoLogin.Name = "cbAutoLogin";
+            this.cbAutoLogin.Size = new System.Drawing.Size(91, 24);
+            this.cbAutoLogin.TabIndex = 4;
+            this.cbAutoLogin.Text = "自动登录";
+            this.cbAutoLogin.UseVisualStyleBackColor = true;
             // 
             // guna2BtnLogin
             // 
@@ -213,42 +253,6 @@
             this.guna2BtnRegist.Text = "注册账号";
             this.guna2BtnRegist.Click += new System.EventHandler(this.guna2BtnRegist_Click);
             // 
-            // guna2QQIDBtnDel
-            // 
-            this.guna2QQIDBtnDel.BackColor = System.Drawing.Color.Transparent;
-            this.guna2QQIDBtnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2QQIDBtnDel.BackgroundImage")));
-            this.guna2QQIDBtnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2QQIDBtnDel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2QQIDBtnDel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2QQIDBtnDel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2QQIDBtnDel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2QQIDBtnDel.FillColor = System.Drawing.Color.Empty;
-            this.guna2QQIDBtnDel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2QQIDBtnDel.ForeColor = System.Drawing.Color.White;
-            this.guna2QQIDBtnDel.Location = new System.Drawing.Point(225, 20);
-            this.guna2QQIDBtnDel.Name = "guna2QQIDBtnDel";
-            this.guna2QQIDBtnDel.Size = new System.Drawing.Size(15, 15);
-            this.guna2QQIDBtnDel.TabIndex = 1;
-            this.guna2QQIDBtnDel.Click += new System.EventHandler(this.guna2QQIDBtnDel_Click);
-            // 
-            // guna2QQPasswordBtnDel
-            // 
-            this.guna2QQPasswordBtnDel.BackColor = System.Drawing.Color.Transparent;
-            this.guna2QQPasswordBtnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2QQPasswordBtnDel.BackgroundImage")));
-            this.guna2QQPasswordBtnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2QQPasswordBtnDel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2QQPasswordBtnDel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2QQPasswordBtnDel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2QQPasswordBtnDel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2QQPasswordBtnDel.FillColor = System.Drawing.Color.Empty;
-            this.guna2QQPasswordBtnDel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2QQPasswordBtnDel.ForeColor = System.Drawing.Color.White;
-            this.guna2QQPasswordBtnDel.Location = new System.Drawing.Point(225, 22);
-            this.guna2QQPasswordBtnDel.Name = "guna2QQPasswordBtnDel";
-            this.guna2QQPasswordBtnDel.Size = new System.Drawing.Size(15, 15);
-            this.guna2QQPasswordBtnDel.TabIndex = 1;
-            this.guna2QQPasswordBtnDel.Click += new System.EventHandler(this.guna2QQPasswordBtnDel_Click);
-            // 
             // Frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -257,8 +261,8 @@
             this.ClientSize = new System.Drawing.Size(396, 560);
             this.Controls.Add(this.guna2BtnRegist);
             this.Controls.Add(this.guna2BtnLogin);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbAutoLogin);
+            this.Controls.Add(this.cbRememberPwd);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.guna2CirclePictureBoxHead);
@@ -290,8 +294,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox cbRememberPwd;
+        private System.Windows.Forms.CheckBox cbAutoLogin;
         private Guna.UI2.WinForms.Guna2Button guna2BtnLogin;
         private Guna.UI2.WinForms.Guna2Button guna2BtnRegist;
         private Guna.UI2.WinForms.Guna2Button guna2QQIDBtnDel;

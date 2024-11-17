@@ -17,6 +17,8 @@ namespace MyQQ
 
         public Frm_Main fm;
 
+        private Frm_EditPersonalInfo epi = null;
+
         string name;
         string sex;
         int likeAmount;
@@ -37,7 +39,6 @@ namespace MyQQ
             SqlDataReader reader = db.GetSQLReader(str);
             if(reader.Read())
             {
-                name = reader["Name"].ToString();
                 if(!(reader["Sex"] is DBNull))
                 {
                     sex = reader["Sex"].ToString();
@@ -54,14 +55,20 @@ namespace MyQQ
                 {
                     headID = Convert.ToInt32(reader["HeadID"]);
                 }
+                if(!(reader["Name"] is DBNull))
+                {
+                    lblNickName.Text = reader["Name"].ToString();
+                }
+                if(!(reader["headID"] is DBNull))
+                {
+                    guna2CirclePictureBoxHead.Image = imageListHead.Images[Convert.ToInt32(reader["headID"])];
+                }
             }
 
             reader.Close();
             DB_Helper.connection.Close();
-
-            lblNickName.Text = name;
+            
             lblQQID.Text = PublicClass.loginID.ToString();
-            guna2CirclePictureBoxHead.Image = imageListHead.Images[headID];
             try
             {
                 if (sex == "男")
@@ -98,9 +105,40 @@ namespace MyQQ
 
         private void guna2ButtonEditPersonalInfo_Click(object sender, EventArgs e)
         {
+            //if(epi==null || epi.IsDisposed) //如果窗体不存在，创建一个窗体
+            //{
+            //    Frm_EditPersonalInfo epi = new Frm_EditPersonalInfo();
+            //    epi.fpi = this; //新建信息编辑窗体，该窗体的fpi变量引用本窗体的实例
+            //    epi.Show();
+            //}
+            //else
+            //{
+            //    epi.Activate(); //否则，将窗体激活，避免多次点击按钮创建多个窗体的情况
+            //    epi.WindowState = FormWindowState.Normal;
+            //    MessageBox.Show("窗体已经存在，激活");
+            //}
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if(form is Frm_EditPersonalInfo)
+                {
+                    form.Activate();
+                    form.WindowState = FormWindowState.Normal;
+                    form.TopMost = true;
+                    return;
+                }
+            }
             Frm_EditPersonalInfo epi = new Frm_EditPersonalInfo();
             epi.fpi = this; //新建信息编辑窗体，该窗体的fpi变量引用本窗体的实例
             epi.Show();
+
+            //foreach (Form form in Application.OpenForms)
+            //{
+            //    if(!(form is Frm_EditPersonalInfo))
+            //    {
+            //        form.BackColor = Color.Gray;
+            //    }
+            //}
         }
 
         public void UpdateHead(int id)

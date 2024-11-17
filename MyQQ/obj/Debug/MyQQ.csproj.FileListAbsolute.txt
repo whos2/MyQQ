@@ -17,3 +17,5 @@ C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.Frm_EditPersonalInfo.resources
 C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.Frm_Head.resources
 C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.UC_Controls.UC_FriendItem.resources
 C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.UC_Controls.UC_SearchItem.resources
+C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.UC_Controls.UC_Logining.resources
+C:\Users\sc\source\repos\MyQQ\MyQQ\obj\Debug\MyQQ.UC_Controls.UC_NewFriendItem.resources

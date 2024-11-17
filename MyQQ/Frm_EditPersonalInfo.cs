@@ -35,6 +35,16 @@ namespace MyQQ
 
         private void guna2CirclePictureBoxHead_Click(object sender, EventArgs e)
         {
+            foreach (Form form in Application.OpenForms)
+            {
+                if(form is Frm_Head)
+                {
+                    form.Activate();
+                    form.WindowState = FormWindowState.Normal;
+                    form.TopMost = true;
+                    return;
+                }
+            }
             Frm_Head fh = new Frm_Head(); //创建头像选择界面的对象
             fh.epi = this; //该对象的epi变量引用的是本界面（信息编辑界面）实例
             fh.Show();
@@ -180,6 +190,28 @@ namespace MyQQ
         private void guna2ButtonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Frm_EditPersonalInfo_Resize(object sender, EventArgs e)
+        {
+            PublicClass.SetWindowRegion(this, 10);
+            PublicClass.SetClassLong(this.Handle, PublicClass.GCL_STYLE, PublicClass.GetClassLong(this.Handle, PublicClass.GCL_STYLE) | PublicClass.CS_DropSHADOW); //API函数加载，实现窗体边框阴影效果
+        }
+
+        private void guna2BtnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void guna2BtnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panelTop_MouseDown(object sender, MouseEventArgs e)
+        {
+            PublicClass.ReleaseCapture();//用来释放被当前线程中某个窗口捕获的光标
+            PublicClass.SendMessage(this.Handle, PublicClass.WM_SYSCOMMAND, PublicClass.SC_MOVE + PublicClass.HTCAPTION, 0);//向Windows发送拖动窗体的消息
         }
     }
 }

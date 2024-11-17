@@ -47,7 +47,11 @@
             this.guna2ButtonConfirm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ButtonCancel = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.panelTop = new System.Windows.Forms.Panel();
+            this.guna2BtnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2BtnMin = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBoxHead)).BeginInit();
+            this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CirclePictureBoxHead
@@ -297,20 +301,67 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Pink;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(14, 14);
+            this.label7.Location = new System.Drawing.Point(10, 6);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 25);
             this.label7.TabIndex = 11;
             this.label7.Text = "编辑资料";
+            // 
+            // panelTop
+            // 
+            this.panelTop.Controls.Add(this.guna2BtnCancel);
+            this.panelTop.Controls.Add(this.guna2BtnMin);
+            this.panelTop.Controls.Add(this.label7);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(487, 36);
+            this.panelTop.TabIndex = 12;
+            this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
+            // 
+            // guna2BtnCancel
+            // 
+            this.guna2BtnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2BtnCancel.BackgroundImage")));
+            this.guna2BtnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2BtnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2BtnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2BtnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2BtnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2BtnCancel.FillColor = System.Drawing.Color.Empty;
+            this.guna2BtnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2BtnCancel.ForeColor = System.Drawing.Color.White;
+            this.guna2BtnCancel.Location = new System.Drawing.Point(454, 8);
+            this.guna2BtnCancel.Name = "guna2BtnCancel";
+            this.guna2BtnCancel.Size = new System.Drawing.Size(20, 20);
+            this.guna2BtnCancel.TabIndex = 15;
+            this.guna2BtnCancel.Click += new System.EventHandler(this.guna2BtnCancel_Click);
+            // 
+            // guna2BtnMin
+            // 
+            this.guna2BtnMin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2BtnMin.BackgroundImage")));
+            this.guna2BtnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2BtnMin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2BtnMin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2BtnMin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2BtnMin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2BtnMin.FillColor = System.Drawing.Color.Empty;
+            this.guna2BtnMin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2BtnMin.ForeColor = System.Drawing.Color.White;
+            this.guna2BtnMin.Location = new System.Drawing.Point(420, 8);
+            this.guna2BtnMin.Name = "guna2BtnMin";
+            this.guna2BtnMin.Size = new System.Drawing.Size(20, 20);
+            this.guna2BtnMin.TabIndex = 16;
+            this.guna2BtnMin.Click += new System.EventHandler(this.guna2BtnMin_Click);
             // 
             // Frm_EditPersonalInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(487, 505);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.guna2CirclePictureBoxHead);
+            this.Controls.Add(this.panelTop);
             this.Controls.Add(this.guna2ButtonConfirm);
             this.Controls.Add(this.guna2ButtonCancel);
             this.Controls.Add(this.guna2DateTimePickerBirth);
@@ -325,7 +376,6 @@
             this.Controls.Add(this.guna2TextBoxNewPwd);
             this.Controls.Add(this.guna2TextBoxOriginalPwd);
             this.Controls.Add(this.guna2TextBoxNickName);
-            this.Controls.Add(this.guna2CirclePictureBoxHead);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -333,7 +383,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "编辑资料";
             this.Load += new System.EventHandler(this.Frm_EditPersonalInfo_Load);
+            this.Resize += new System.EventHandler(this.Frm_EditPersonalInfo_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBoxHead)).EndInit();
+            this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,5 +411,8 @@
         private Guna.UI2.WinForms.Guna2Button guna2ButtonConfirm;
         private Guna.UI2.WinForms.Guna2Button guna2ButtonCancel;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panelTop;
+        private Guna.UI2.WinForms.Guna2Button guna2BtnCancel;
+        private Guna.UI2.WinForms.Guna2Button guna2BtnMin;
     }
 }

@@ -98,11 +98,23 @@
     <Compile Include="UC_Controls\UC_FriendItem.Designer.cs">
       <DependentUpon>UC_FriendItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Controls\UC_Logining.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Controls\UC_Logining.Designer.cs">
+      <DependentUpon>UC_Logining.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Controls\UC_MessageItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_Controls\UC_MessageItem.Designer.cs">
       <DependentUpon>UC_MessageItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Controls\UC_NewFriendItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Controls\UC_NewFriendItem.Designer.cs">
+      <DependentUpon>UC_NewFriendItem.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_Controls\UC_SearchItem.cs">
       <SubType>UserControl</SubType>
@@ -139,6 +151,12 @@
     </Compile>
     <EmbeddedResource Include="UC_Controls\UC_FriendItem.resx">
       <DependentUpon>UC_FriendItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Controls\UC_Logining.resx">
+      <DependentUpon>UC_Logining.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Controls\UC_NewFriendItem.resx">
+      <DependentUpon>UC_NewFriendItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Controls\UC_SearchItem.resx">
       <DependentUpon>UC_SearchItem.cs</DependentUpon>

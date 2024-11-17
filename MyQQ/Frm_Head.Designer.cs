@@ -35,10 +35,12 @@
             this.guna2ButtonConfirm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ButtonCancel = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelTop = new System.Windows.Forms.Panel();
+            this.guna2BtnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2BtnMin = new Guna.UI2.WinForms.Guna2Button();
             this.listViewHead = new System.Windows.Forms.ListView();
             this.guna2CustomGradientPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageListHead
@@ -96,7 +98,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Pink;
+            this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(12, 9);
             this.label7.Name = "label7";
@@ -104,25 +106,65 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "选择头像";
             // 
-            // panel1
+            // panelTop
             // 
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(442, 45);
-            this.panel1.TabIndex = 13;
+            this.panelTop.Controls.Add(this.guna2BtnCancel);
+            this.panelTop.Controls.Add(this.guna2BtnMin);
+            this.panelTop.Controls.Add(this.label7);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(442, 45);
+            this.panelTop.TabIndex = 13;
+            this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
+            // 
+            // guna2BtnCancel
+            // 
+            this.guna2BtnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2BtnCancel.BackgroundImage")));
+            this.guna2BtnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2BtnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2BtnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2BtnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2BtnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2BtnCancel.FillColor = System.Drawing.Color.Empty;
+            this.guna2BtnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2BtnCancel.ForeColor = System.Drawing.Color.White;
+            this.guna2BtnCancel.Location = new System.Drawing.Point(408, 12);
+            this.guna2BtnCancel.Name = "guna2BtnCancel";
+            this.guna2BtnCancel.Size = new System.Drawing.Size(20, 20);
+            this.guna2BtnCancel.TabIndex = 13;
+            this.guna2BtnCancel.Click += new System.EventHandler(this.guna2BtnCancel_Click);
+            // 
+            // guna2BtnMin
+            // 
+            this.guna2BtnMin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2BtnMin.BackgroundImage")));
+            this.guna2BtnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2BtnMin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2BtnMin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2BtnMin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2BtnMin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2BtnMin.FillColor = System.Drawing.Color.Empty;
+            this.guna2BtnMin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2BtnMin.ForeColor = System.Drawing.Color.White;
+            this.guna2BtnMin.Location = new System.Drawing.Point(374, 12);
+            this.guna2BtnMin.Name = "guna2BtnMin";
+            this.guna2BtnMin.Size = new System.Drawing.Size(20, 20);
+            this.guna2BtnMin.TabIndex = 14;
+            this.guna2BtnMin.Click += new System.EventHandler(this.guna2BtnMin_Click);
             // 
             // listViewHead
             // 
             this.listViewHead.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listViewHead.Dock = System.Windows.Forms.DockStyle.Top;
             this.listViewHead.HideSelection = false;
+            this.listViewHead.LargeImageList = this.imageListHead;
             this.listViewHead.Location = new System.Drawing.Point(0, 45);
             this.listViewHead.Name = "listViewHead";
             this.listViewHead.Size = new System.Drawing.Size(442, 204);
+            this.listViewHead.SmallImageList = this.imageListHead;
             this.listViewHead.TabIndex = 14;
             this.listViewHead.UseCompatibleStateImageBehavior = false;
+            this.listViewHead.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewHead_MouseDoubleClick_1);
             // 
             // Frm_Head
             // 
@@ -131,15 +173,16 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(442, 288);
             this.Controls.Add(this.listViewHead);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelTop);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Head";
             this.Text = "选择头像";
             this.Load += new System.EventHandler(this.Frm_Head_Load);
+            this.Resize += new System.EventHandler(this.Frm_Head_Resize);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -150,7 +193,9 @@
         private Guna.UI2.WinForms.Guna2Button guna2ButtonConfirm;
         private Guna.UI2.WinForms.Guna2Button guna2ButtonCancel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.ListView listViewHead;
+        private Guna.UI2.WinForms.Guna2Button guna2BtnCancel;
+        private Guna.UI2.WinForms.Guna2Button guna2BtnMin;
     }
 }

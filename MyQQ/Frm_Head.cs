@@ -41,7 +41,7 @@ namespace MyQQ
             }
         }
 
-        private void listViewHead_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void listViewHead_MouseDoubleClick_1(object sender, MouseEventArgs e)
         {
             int headID = listViewHead.SelectedItems[0].ImageIndex;
             epi.ShowHead(headID);
@@ -51,6 +51,28 @@ namespace MyQQ
         private void guna2ButtonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void guna2BtnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void guna2BtnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Frm_Head_Resize(object sender, EventArgs e)
+        {
+            PublicClass.SetWindowRegion(this, 10);
+            PublicClass.SetClassLong(this.Handle, PublicClass.GCL_STYLE, PublicClass.GetClassLong(this.Handle, PublicClass.GCL_STYLE) | PublicClass.CS_DropSHADOW); //API函数加载，实现窗体边框阴影效果
+        }
+
+        private void panelTop_MouseDown(object sender, MouseEventArgs e)
+        {
+            PublicClass.ReleaseCapture();//用来释放被当前线程中某个窗口捕获的光标
+            PublicClass.SendMessage(this.Handle, PublicClass.WM_SYSCOMMAND, PublicClass.SC_MOVE + PublicClass.HTCAPTION, 0);//向Windows发送拖动窗体的消息
         }
     }
 }

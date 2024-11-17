@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Login));
             this.panelTopFrmLogin = new System.Windows.Forms.Panel();
             this.guna2BtnCancel = new Guna.UI2.WinForms.Guna2Button();
@@ -43,6 +44,7 @@
             this.cbAutoLogin = new System.Windows.Forms.CheckBox();
             this.guna2BtnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.guna2BtnRegist = new Guna.UI2.WinForms.Guna2Button();
+            this.imageListHead = new System.Windows.Forms.ImageList(this.components);
             this.panelTopFrmLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBoxHead)).BeginInit();
             this.panel2.SuspendLayout();
@@ -253,6 +255,16 @@
             this.guna2BtnRegist.Text = "注册账号";
             this.guna2BtnRegist.Click += new System.EventHandler(this.guna2BtnRegist_Click);
             // 
+            // imageListHead
+            // 
+            this.imageListHead.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListHead.ImageStream")));
+            this.imageListHead.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListHead.Images.SetKeyName(0, "OIP-C.jpg");
+            this.imageListHead.Images.SetKeyName(1, "u=734950038,2286741828&fm=253&gp=0.jpg");
+            this.imageListHead.Images.SetKeyName(2, "u=1946511132,1507826697&fm=253&gp=0.jpg");
+            this.imageListHead.Images.SetKeyName(3, "u=2411300999,2710627520&fm=253&gp=0.jpg");
+            this.imageListHead.Images.SetKeyName(4, "u=2873350968,38029528&fm=253&gp=0.jpg");
+            // 
             // Frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -300,5 +312,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2BtnRegist;
         private Guna.UI2.WinForms.Guna2Button guna2QQIDBtnDel;
         private Guna.UI2.WinForms.Guna2Button guna2QQPasswordBtnDel;
+        private System.Windows.Forms.ImageList imageListHead;
     }
 }

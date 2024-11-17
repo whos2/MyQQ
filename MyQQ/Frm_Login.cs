@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -119,7 +120,47 @@ namespace MyQQ
                         str = $"update User_Table set AutoLogin=1,Flag=1 where ID={PublicClass.loginID}";
                         db.ExecSQLResult(str);
                     }
+
+                    str = $"select HeadID from User_Table where ID={PublicClass.loginID}";
+                    SqlDataReader reader = db.GetSQLReader(str);
+                    if(reader.Read())
+                    {
+                        if(!(reader["HeadID"] is DBNull))
+                        {
+                            guna2CirclePictureBoxHead.Image = imageListHead.Images[Convert.ToInt32(reader["HeadID"])];
+                            guna2CirclePictureBoxHead.Refresh();
+                        }
+                    }
+                    reader.Close();
+                    DB_Helper.connection.Close();
+
+                    //DateTime nowTime = DateTime.Now;
+                    //int waitTime = 1;
+                    //int interval = 0;
+                    //while (interval < waitTime)
+                    //{
+                    //    TimeSpan spand = DateTime.Now - nowTime;
+                    //    interval = spand.Seconds;
+                    //}
+
+                    //UC_Logining logining = new UC_Logining();
+                    //logining.Show();
+                    //Form f1 = new Form();
+                    //f1.Show();
+                    //f1.TopMost = true;
+                    //Label label = new Label();
+                    //label.Text = "登录中......";
+                    //label.BackColor = Color.White;
+                    //label.Size = new Size(1000, 200);
+                    //label.Location = new Point((f1.Width - label.Width) / 2, (f1.Height - label.Height) / 2);
+                    //f1.Controls.Add(label);
+                    //f1.Size = new Size(label.Width + 20, label.Height + 20);
+                    //f1.StartPosition = FormStartPosition.CenterScreen;
+
+                    System.Threading.Thread.Sleep(1000);  //延时1s，显示图片替换效果
+                    //f1.Dispose();
                     this.Hide();
+                    //logining.Dispose();
                     Frm_Main m = new Frm_Main();
                     m.ShowDialog();
                 }
@@ -233,6 +274,7 @@ namespace MyQQ
                             cbRememberPwd.Checked = true;
                             cbAutoLogin.Checked = true;
                             txtPassword.Text = ds.Tables[0].Rows[0][0].ToString();
+                            txtPassword.Refresh();
                             guna2BtnLogin_Click(sender, e);
                         }
                     }

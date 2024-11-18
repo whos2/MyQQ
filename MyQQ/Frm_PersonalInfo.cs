@@ -35,7 +35,7 @@ namespace MyQQ
         //显示个人信息
         public void ShowPersonalInfo()
         {
-            string str = $"select Name,Sex,ID,Flag,LikeAmount,HeadID from User_Table where ID={PublicClass.loginID}";
+            string str = $"select Name,Sex,ID,Flag,LikeAmount,HeadID,Birthday from User_Table where ID={PublicClass.loginID}";
             SqlDataReader reader = db.GetSQLReader(str);
             if(reader.Read())
             {
@@ -62,6 +62,10 @@ namespace MyQQ
                 if(!(reader["headID"] is DBNull))
                 {
                     guna2CirclePictureBoxHead.Image = imageListHead.Images[Convert.ToInt32(reader["headID"])];
+                }
+                if(!(reader["Birthday"] is DBNull))
+                {
+                    lblBirthday.Text = reader["Birthday"].ToString();
                 }
             }
 

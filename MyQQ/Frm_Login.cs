@@ -133,30 +133,7 @@ namespace MyQQ
                     }
                     reader.Close();
                     DB_Helper.connection.Close();
-
-                    //DateTime nowTime = DateTime.Now;
-                    //int waitTime = 1;
-                    //int interval = 0;
-                    //while (interval < waitTime)
-                    //{
-                    //    TimeSpan spand = DateTime.Now - nowTime;
-                    //    interval = spand.Seconds;
-                    //}
-
-                    //UC_Logining logining = new UC_Logining();
-                    //logining.Show();
-                    //Form f1 = new Form();
-                    //f1.Show();
-                    //f1.TopMost = true;
-                    //Label label = new Label();
-                    //label.Text = "登录中......";
-                    //label.BackColor = Color.White;
-                    //label.Size = new Size(1000, 200);
-                    //label.Location = new Point((f1.Width - label.Width) / 2, (f1.Height - label.Height) / 2);
-                    //f1.Controls.Add(label);
-                    //f1.Size = new Size(label.Width + 20, label.Height + 20);
-                    //f1.StartPosition = FormStartPosition.CenterScreen;
-
+                    
                     System.Threading.Thread.Sleep(1000);  //延时1s，显示图片替换效果
                     //f1.Dispose();
                     this.Hide();

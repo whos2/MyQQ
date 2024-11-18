@@ -43,6 +43,8 @@
             this.imageListSex = new System.Windows.Forms.ImageList(this.components);
             this.imageListFlag = new System.Windows.Forms.ImageList(this.components);
             this.imageListHead = new System.Windows.Forms.ImageList(this.components);
+            this.lblBirthday = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBoxHead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBoxFlag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBoxSex)).BeginInit();
@@ -56,7 +58,7 @@
             this.guna2CirclePictureBoxHead.Location = new System.Drawing.Point(12, 13);
             this.guna2CirclePictureBoxHead.Name = "guna2CirclePictureBoxHead";
             this.guna2CirclePictureBoxHead.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBoxHead.Size = new System.Drawing.Size(65, 65);
+            this.guna2CirclePictureBoxHead.Size = new System.Drawing.Size(65, 63);
             this.guna2CirclePictureBoxHead.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBoxHead.TabIndex = 1;
             this.guna2CirclePictureBoxHead.TabStop = false;
@@ -195,12 +197,34 @@
             this.imageListHead.Images.SetKeyName(3, "u=2411300999,2710627520&fm=253&gp=0.jpg");
             this.imageListHead.Images.SetKeyName(4, "u=2873350968,38029528&fm=253&gp=0.jpg");
             // 
+            // lblBirthday
+            // 
+            this.lblBirthday.AutoSize = true;
+            this.lblBirthday.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblBirthday.Location = new System.Drawing.Point(147, 72);
+            this.lblBirthday.Name = "lblBirthday";
+            this.lblBirthday.Size = new System.Drawing.Size(93, 20);
+            this.lblBirthday.TabIndex = 10;
+            this.lblBirthday.Text = "2024/11/17";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(108, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 20);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "生日";
+            // 
             // Frm_PersonalInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(371, 327);
+            this.Controls.Add(this.lblBirthday);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.guna2CirclePictureBoxSex);
             this.Controls.Add(this.btnLike);
             this.Controls.Add(this.lblFlag);
@@ -241,5 +265,7 @@
         private System.Windows.Forms.ImageList imageListSex;
         private System.Windows.Forms.ImageList imageListFlag;
         private System.Windows.Forms.ImageList imageListHead;
+        private System.Windows.Forms.Label lblBirthday;
+        private System.Windows.Forms.Label label3;
     }
 }

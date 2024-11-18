@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net461\Guna.UI2.dll</HintPath>
@@ -52,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PipeServer.cs" />
     <Compile Include="DB_Helper.cs" />
     <Compile Include="Frm_EditPersonalInfo.cs">
       <SubType>Form</SubType>
@@ -92,11 +96,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicClass.cs" />
+    <Compile Include="PipeClient.cs" />
     <Compile Include="UC_Controls\UC_FriendItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_Controls\UC_FriendItem.Designer.cs">
       <DependentUpon>UC_FriendItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Controls\UC_FriendMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Controls\UC_FriendMessage.Designer.cs">
+      <DependentUpon>UC_FriendMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_Controls\UC_Logining.cs">
       <SubType>UserControl</SubType>
@@ -109,6 +120,12 @@
     </Compile>
     <Compile Include="UC_Controls\UC_MessageItem.Designer.cs">
       <DependentUpon>UC_MessageItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Controls\UC_MyMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Controls\UC_MyMessage.Designer.cs">
+      <DependentUpon>UC_MyMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_Controls\UC_NewFriendItem.cs">
       <SubType>UserControl</SubType>
@@ -152,8 +169,14 @@
     <EmbeddedResource Include="UC_Controls\UC_FriendItem.resx">
       <DependentUpon>UC_FriendItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_Controls\UC_FriendMessage.resx">
+      <DependentUpon>UC_FriendMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_Controls\UC_Logining.resx">
       <DependentUpon>UC_Logining.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Controls\UC_MyMessage.resx">
+      <DependentUpon>UC_MyMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Controls\UC_NewFriendItem.resx">
       <DependentUpon>UC_NewFriendItem.cs</DependentUpon>
@@ -174,6 +197,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon %281%29.ico" />
+    <Content Include="favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

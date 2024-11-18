@@ -82,6 +82,7 @@
             this.guna2TextBoxNickName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBoxNickName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxNickName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBoxNickName.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBoxNickName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxNickName.Location = new System.Drawing.Point(152, 107);
             this.guna2TextBoxNickName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -105,6 +106,7 @@
             this.guna2TextBoxOriginalPwd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBoxOriginalPwd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxOriginalPwd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBoxOriginalPwd.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBoxOriginalPwd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxOriginalPwd.Location = new System.Drawing.Point(152, 278);
             this.guna2TextBoxOriginalPwd.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -128,6 +130,7 @@
             this.guna2TextBoxNewPwd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBoxNewPwd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxNewPwd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBoxNewPwd.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBoxNewPwd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxNewPwd.Location = new System.Drawing.Point(152, 335);
             this.guna2TextBoxNewPwd.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -151,6 +154,7 @@
             this.guna2TextBoxConfirmPwd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBoxConfirmPwd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxConfirmPwd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBoxConfirmPwd.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBoxConfirmPwd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxConfirmPwd.Location = new System.Drawing.Point(152, 392);
             this.guna2TextBoxConfirmPwd.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -230,7 +234,7 @@
             this.guna2ComboBoxSex.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2ComboBoxSex.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2ComboBoxSex.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBoxSex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBoxSex.ForeColor = System.Drawing.Color.Black;
             this.guna2ComboBoxSex.ItemHeight = 30;
             this.guna2ComboBoxSex.Items.AddRange(new object[] {
             "男",
@@ -247,6 +251,7 @@
             this.guna2DateTimePickerBirth.Checked = true;
             this.guna2DateTimePickerBirth.FillColor = System.Drawing.Color.White;
             this.guna2DateTimePickerBirth.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateTimePickerBirth.ForeColor = System.Drawing.Color.Black;
             this.guna2DateTimePickerBirth.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.guna2DateTimePickerBirth.Location = new System.Drawing.Point(152, 221);
             this.guna2DateTimePickerBirth.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -359,6 +364,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(487, 505);
             this.Controls.Add(this.guna2CirclePictureBoxHead);
             this.Controls.Add(this.panelTop);

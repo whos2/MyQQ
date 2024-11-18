@@ -20,7 +20,8 @@ namespace MyQQ
         DB_Helper db = new DB_Helper();//创建数据操作类的对象
 
         //ContextMenuStrip contextMenuStrip;
-        
+
+        bool canSendMessage = false;
 
         string name; //用户的昵称
         int headID;  //用户头像图片的ID
@@ -36,6 +37,22 @@ namespace MyQQ
             flowLayoutPanel.AutoScroll = false;
             flowLayoutPanel.HorizontalScroll.Maximum = 0;
             flowLayoutPanel.AutoScroll = true;
+
+            flowLayoutPanelMessRegion.AutoScroll = false;
+            flowLayoutPanelMessRegion.HorizontalScroll.Maximum = 0;
+            flowLayoutPanelMessRegion.AutoScroll = true;
+
+            lblChatFriendNickName.Visible = false;
+            guna2CirclePictureBoxFriendState.Visible = false;
+            guna2ButtonEmoji.Visible = false;
+            guna2ButtonCapture.Visible = false;
+            guna2ButtonFile.Visible = false;
+            guna2ButtonDir.Visible = false;
+            guna2BtnSend.Visible = false;
+            panel5.Visible = false;
+            panel6.Visible = false;
+            this.BackColor = Color.WhiteSmoke;
+            richTBMessage.Visible = false;
 
             //UC_FriendItem fi = new UC_FriendItem();
             //fi.ChangeFriendNameAndState += new UC_FriendItem.ChangeFriendNameAndStateHandler(b_ChangeFriendNameAndStateHandler);
@@ -90,6 +107,7 @@ namespace MyQQ
 
             LoadPersonalInfo();
             LoadFriendFromDB();
+            ShowNewFriendAmount();
         }
 
         //将获取到的控件信息存储到控件的tag属性中
@@ -227,9 +245,12 @@ namespace MyQQ
         /// <param name="e"></param>
         private void Frm_Main_MouseDown(object sender, MouseEventArgs e)
         {
-            if(e.Button==MouseButtons.Left) 
+            if(Application.OpenForms["Frm_PersonalInfo"] != null)
             {
-                Application.OpenForms["Frm_PersonalInfo"].Dispose(); //将该小窗体销毁
+                if (e.Button == MouseButtons.Left)
+                {
+                    Application.OpenForms["Frm_PersonalInfo"].Dispose(); //将该小窗体销毁
+                }
             }
         }
 
@@ -283,15 +304,39 @@ namespace MyQQ
             }
         }
 
+        
+        private void ShowNewFriendAmount()
+        {
+            int numNewFriend = 0;
+            string str = $"select HostID,Agree,Refuse,HeadID,Name,User_Table.ID from Friend_Table,User_Table where Friend_Table.FriendID={PublicClass.loginID} and User_Table.ID=Friend_Table.HostID and Friend_Table.Agree=0";
+            SqlDataReader reader = db.GetSQLReader(str);
+            while (reader.Read())
+            {
+                numNewFriend += 1;
+            }
+            reader.Close();
+            DB_Helper.connection.Close();
+
+            if(numNewFriend == 0)
+            {
+                guna2HtmlLabelNewFriendAmount.Visible = false;
+            }
+            else
+            {
+                guna2HtmlLabelNewFriendAmount.Visible = true;
+                guna2HtmlLabelNewFriendAmount.Text = numNewFriend.ToString();
+            }
+        }
+
         /// <summary>
         /// 从数据库中读取用户接收到的申请加好友的信息
         /// </summary>
         private void SearchNewFriendFromDB()
         {
             flowLayoutPanel.Controls.Clear();
-            string str = $"select HostID,Agree,Refuse,HeadID,Name,User_Table.ID from Friend_Table,User_Table where Friend_Table.FriendID={PublicClass.loginID} and User_Table.ID=Friend_Table.HostID";
+            int numNewFriend = 0;
+            string str = $"select HostID,Agree,Refuse,HeadID,Name,User_Table.ID from Friend_Table,User_Table where Friend_Table.FriendID={PublicClass.loginID} and User_Table.ID=Friend_Table.HostID and Friend_Table.Agree=0";
             SqlDataReader reader = db.GetSQLReader(str);
-            int num = 0;
             while(reader.Read())
             {
                 UC_NewFriendItem uc = new UC_NewFriendItem();
@@ -305,18 +350,30 @@ namespace MyQQ
                 }
 
                 flowLayoutPanel.Controls.Add(uc);
-                num += 1;
+                numNewFriend += 1;
             }
 
             reader.Close();
             DB_Helper.connection.Close();
-            guna2HtmlLabelNewFriendAmount.Text = num.ToString();
+            
         }
 
         private void UpdateFrmMain(object sender, UC_FriendItem.FriendItemID e)
         {
+            lblChatFriendNickName.Visible = true;
+            guna2CirclePictureBoxFriendState.Visible = true;
+            guna2ButtonEmoji.Visible = true;
+            guna2ButtonCapture.Visible = true;
+            guna2ButtonFile.Visible = true;
+            guna2ButtonDir.Visible = true;
+            guna2BtnSend.Visible = true;
+            panel5.Visible = true;
+            panel6.Visible = true;
+            //this.BackColor = Color.WhiteSmoke;
+            richTBMessage.Visible = true;
+
             int id = e.FriendID;
-            string str = $"select Name from User_Table where ID={id}";
+            string str = $"select Name,Flag from User_Table where ID={id}";
             SqlDataReader reader = db.GetSQLReader(str);
             if(reader.Read())
             {
@@ -324,10 +381,25 @@ namespace MyQQ
                 {
                     lblChatFriendNickName.Text = reader["Name"].ToString();
                 }
+                if(!(reader["Flag"] is DBNull))
+                {
+                    guna2CirclePictureBoxFriendState.Image = imageListFlag.Images[Convert.ToInt32(reader["Flag"])];
+                }
             }
             reader.Close();
             DB_Helper.connection.Close();
-            panelChat.BackColor = Color.White;
+            //panelChat.BackColor = Color.White;
+            richTBMessage.Focus();
+            Point nickName2ScreenPos = lblChatFriendNickName.PointToScreen(new Point(0, 0)); //昵称控件相对于屏幕的坐标
+            int nameX = nickName2ScreenPos.X; //昵称控件相对于屏幕的横坐标
+            int nameY = nickName2ScreenPos.Y; //昵称控件相对于屏幕的纵坐标
+            int startX = nameX + lblChatFriendNickName.Width-270; //性别控件相对于屏幕位置的X坐标
+            int startY = nameY+2; //性别控件相对于屏幕位置的Y坐标
+
+            Point flag2ScreenPos = new Point(startX, startY);
+            Point sex2FormPos = this.PointToClient(flag2ScreenPos);
+
+            guna2CirclePictureBoxFriendState.Location = sex2FormPos;
         }
 
         /// <summary>
@@ -408,6 +480,46 @@ namespace MyQQ
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             SearchNewFriendFromDB();
+        }
+
+        private void guna2ButtonMessList_Click(object sender, EventArgs e)
+        {
+            LoadFriendFromDB();
+        }
+        
+        /// <summary>
+        /// 发送消息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void guna2BtnSend_Click(object sender, EventArgs e)
+        {
+            UC_MyMessage uc = new UC_MyMessage();
+            uc.Message = richTBMessage.Text;
+            flowLayoutPanelMessRegion.Controls.Add(uc);
+            richTBMessage.Focus();
+
+            richTBMessage.Clear();
+            //richTBMessage.Select(0,0);
+
+            //实现的功能是：滚动条随着消息的更新自动向下滚动
+            Point newPoint = new Point(0, flowLayoutPanelMessRegion.Height - flowLayoutPanelMessRegion.AutoScrollPosition.Y);
+            flowLayoutPanelMessRegion.AutoScrollPosition = newPoint;
+
+            PipeServer server = new PipeServer();
+            PipeClient client = new PipeClient();
+            BackgroundWorker back;
+            
+        }
+
+        private void richTBMessage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Control && e.KeyCode == Keys.Enter)    //检测组合键，ctrl+enter
+            {
+                guna2BtnSend_Click(sender, e);          //如果检测到组合键，调用发送消息的函数
+                //e.Handled = false;
+                e.SuppressKeyPress = true;              //文本框内不换行
+            }
         }
     }
 }

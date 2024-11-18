@@ -8,12 +8,15 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyQQ.UC_Controls;
 
 namespace MyQQ
 {
     class PublicClass
     {
         public static int loginID;
+
+        public static UC_FriendItem currentUC;
 
         #region  鼠标移动窗体位置
         public const int WM_SYSCOMMAND = 0x0112;//该变量表示将向Windows发送的消息类型

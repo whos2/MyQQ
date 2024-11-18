@@ -97,7 +97,7 @@
             this.guna2BtnCancel.FillColor = System.Drawing.Color.Empty;
             this.guna2BtnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2BtnCancel.ForeColor = System.Drawing.Color.White;
-            this.guna2BtnCancel.Location = new System.Drawing.Point(618, 7);
+            this.guna2BtnCancel.Location = new System.Drawing.Point(618, 3);
             this.guna2BtnCancel.Name = "guna2BtnCancel";
             this.guna2BtnCancel.Size = new System.Drawing.Size(20, 20);
             this.guna2BtnCancel.TabIndex = 1;
@@ -114,10 +114,11 @@
             this.guna2BtnMin.FillColor = System.Drawing.Color.Empty;
             this.guna2BtnMin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2BtnMin.ForeColor = System.Drawing.Color.White;
-            this.guna2BtnMin.Location = new System.Drawing.Point(583, 7);
+            this.guna2BtnMin.Location = new System.Drawing.Point(583, 3);
             this.guna2BtnMin.Name = "guna2BtnMin";
             this.guna2BtnMin.Size = new System.Drawing.Size(20, 20);
             this.guna2BtnMin.TabIndex = 2;
+            this.guna2BtnMin.Click += new System.EventHandler(this.guna2BtnMin_Click);
             // 
             // guna2TextBoxConfirmPwd
             // 

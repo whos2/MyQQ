@@ -140,5 +140,10 @@ namespace MyQQ
                 guna2TextBoxConfirmPwd.PasswordChar = '\0';
             }
         }
+
+        private void guna2BtnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

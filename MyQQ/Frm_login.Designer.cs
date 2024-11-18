@@ -103,10 +103,10 @@
             this.guna2CirclePictureBoxHead.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.guna2CirclePictureBoxHead.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBoxHead.Image")));
             this.guna2CirclePictureBoxHead.ImageRotate = 0F;
-            this.guna2CirclePictureBoxHead.Location = new System.Drawing.Point(150, 102);
+            this.guna2CirclePictureBoxHead.Location = new System.Drawing.Point(144, 102);
             this.guna2CirclePictureBoxHead.Name = "guna2CirclePictureBoxHead";
             this.guna2CirclePictureBoxHead.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBoxHead.Size = new System.Drawing.Size(104, 108);
+            this.guna2CirclePictureBoxHead.Size = new System.Drawing.Size(115, 108);
             this.guna2CirclePictureBoxHead.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBoxHead.TabIndex = 1;
             this.guna2CirclePictureBoxHead.TabStop = false;
@@ -269,7 +269,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(238)))), ((int)(((byte)(249)))));
+            this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(396, 560);
             this.Controls.Add(this.guna2BtnRegist);
             this.Controls.Add(this.guna2BtnLogin);
@@ -280,6 +280,7 @@
             this.Controls.Add(this.guna2CirclePictureBoxHead);
             this.Controls.Add(this.panelTopFrmLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyQQ";
